@@ -1,0 +1,31 @@
+title Single page app
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "Form data is sent with HTTP POST", date: "2022-08-15" }, ...]
+
+note over browser:
+browser executes the event handler
+once the appropriate readyState
+and status are validated and
+renders notes to display
+using the redraw() function
+end note
+
+note over browser:
+browser awaits the .onsubmit event
+to call the event handler for the data sent
+as JSON through the form and render the notes again,
+this is executed as soon as the page loads (.onload)
+end note
