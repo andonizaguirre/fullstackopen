@@ -1,0 +1,37 @@
+title New note - Single page app
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over browser:
+browser calls the event handler as soon as
+the event .onsubmit occurrs and creates the note,
+clears the form, renders the notes to display again
+and sends the data to server
+end note
+
+note over browser:
+browser sets a Content-Type request header
+that tells the server that the included
+data is represented in the JSON format
+end note
+
+note over browser:
+browser sents a POST request to the address
+new_note_spa containing the new note as JSON-data
+with both the content of the note (content)
+and the timestamp (date), it does not send the
+form data in the traditional way
+end note
+
+note over server:
+server accesses the data in the request payload,
+creates a new note object and adds it to an array
+notes without saving it to a database
+end note
+
+server-->browser: HTTP status code 201 (created)
+
+note over server:
+server sends browser a response text confirming
+that the object was created successfully
+end note 
