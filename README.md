@@ -8,6 +8,6 @@ The structure of this repository is as follows:
   - Single page app
   - New note - Single page app
 - Part 1
-  - Course Information 
+  - Course information 
 
 It will be updated as the course progresses.
